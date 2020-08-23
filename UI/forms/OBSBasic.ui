@@ -360,7 +360,7 @@
     <addaction name="actionExportProfile"/>
     <addaction name="separator"/>
    </widget>
-   <widget class="QMenu" name="sceneCollectionMenu">
+   <!--<widget class="QMenu" name="sceneCollectionMenu">
     <property name="title">
      <string>Basic.MainMenu.SceneCollection</string>
     </property>
@@ -371,7 +371,7 @@
     <addaction name="actionImportSceneCollection"/>
     <addaction name="actionExportSceneCollection"/>
     <addaction name="separator"/>
-   </widget>
+   </widget>-->
    <widget class="QMenu" name="viewMenu">
     <property name="title">
      <string>Basic.MainMenu.View</string>

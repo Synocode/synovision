@@ -183,7 +183,7 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 	void obs_frontend_set_current_scene_collection(
 		const char *collection) override
 	{
-		QList<QAction *> menuActions =
+		/*QList<QAction *> menuActions =
 			main->ui->sceneCollectionMenu->actions();
 		QString qstrCollection = QT_UTF8(collection);
 
@@ -197,17 +197,17 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 					break;
 				}
 			}
-		}
+		}*/
 	}
 
 	bool obs_frontend_add_scene_collection(const char *name) override
 	{
 		bool success = false;
-		QMetaObject::invokeMethod(main, "AddSceneCollection",
+		/*QMetaObject::invokeMethod(main, "AddSceneCollection",
 					  WaitConnection(),
 					  Q_RETURN_ARG(bool, success),
 					  Q_ARG(bool, true),
-					  Q_ARG(QString, QT_UTF8(name)));
+					  Q_ARG(QString, QT_UTF8(name)));*/
 		return success;
 	}
 
