@@ -317,7 +317,7 @@ void OBSBasic::DeleteProfile(const char *profileName, const char *profileDir)
 
 void OBSBasic::RefreshProfiles()
 {
-	QList<QAction *> menuActions = ui->profileMenu->actions();
+	/*QList<QAction *> menuActions = ui->profileMenu->actions();
 	int count = 0;
 
 	for (int i = 0; i < menuActions.count(); i++) {
@@ -347,7 +347,7 @@ void OBSBasic::RefreshProfiles()
 
 	EnumProfiles(addProfile);
 
-	ui->actionRemoveProfile->setEnabled(count > 1);
+	ui->actionRemoveProfile->setEnabled(count > 1);*/
 }
 
 void OBSBasic::ResetProfileData()

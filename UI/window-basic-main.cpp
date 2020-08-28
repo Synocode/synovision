@@ -337,18 +337,18 @@ OBSBasic::OBSBasic(QWidget *parent)
 
 	assignDockToggle(ui->scenesDock, ui->toggleScenes);
 	assignDockToggle(ui->sourcesDock, ui->toggleSources);
-	assignDockToggle(ui->mixerDock, ui->toggleMixer);
+	/*assignDockToggle(ui->mixerDock, ui->toggleMixer);
 	assignDockToggle(ui->transitionsDock, ui->toggleTransitions);
 	assignDockToggle(ui->controlsDock, ui->toggleControls);
-	assignDockToggle(statsDock, ui->toggleStats);
+	assignDockToggle(statsDock, ui->toggleStats);*/
 
 	//hide all docking panes
 	ui->toggleScenes->setChecked(false);
 	ui->toggleSources->setChecked(false);
-	ui->toggleMixer->setChecked(false);
-	ui->toggleTransitions->setChecked(false);
-	ui->toggleControls->setChecked(false);
-	ui->toggleStats->setChecked(false);
+	//ui->toggleMixer->setChecked(false);
+	//ui->toggleTransitions->setChecked(false);
+	//ui->toggleControls->setChecked(false);
+	//ui->toggleStats->setChecked(false);
 
 	QPoint curPos;
 
@@ -405,6 +405,15 @@ OBSBasic::OBSBasic(QWidget *parent)
 		this,
 		SLOT(ScenesReordered(const QModelIndex &, int, int,
 				     const QModelIndex &, int)));
+	on_toggleStatusBar_toggled(false);
+
+
+
+
+
+
+	OBSScene scene = GetCurrentScene();
+	OBSSource source = obs_scene_get_source(scene);
 }
 
 static void SaveAudioDevice(const char *name, int channel, obs_data_t *parent,
@@ -1039,8 +1048,8 @@ retryScene:
 	RefreshQuickTransitions();
 
 	bool previewLocked = obs_data_get_bool(data, "preview_locked");
-	ui->preview->SetLocked(previewLocked);
-	ui->actionLockPreview->setChecked(previewLocked);
+	/*ui->preview->SetLocked(previewLocked);
+	ui->actionLockPreview->setChecked(previewLocked);*/
 
 	/* ---------------------- */
 
@@ -1710,7 +1719,7 @@ void OBSBasic::OBSInit()
 	} while (false)
 
 	SET_VISIBILITY("ShowListboxToolbars", toggleListboxToolbars);
-	SET_VISIBILITY("ShowStatusBar", toggleStatusBar);
+	//SET_VISIBILITY("ShowStatusBar", toggleStatusBar);
 #undef SET_VISIBILITY
 
 	bool sourceIconsVisible = config_get_bool(
@@ -1822,12 +1831,12 @@ void OBSBasic::OBSInit()
 		}
 	}
 
-	bool docksLocked = config_get_bool(App()->GlobalConfig(), "BasicWindow",
-					   "DocksLocked");
-	on_lockUI_toggled(docksLocked);
-	ui->lockUI->blockSignals(true);
-	ui->lockUI->setChecked(docksLocked);
-	ui->lockUI->blockSignals(false);
+	/*bool docksLocked = config_get_bool(App()->GlobalConfig(), "BasicWindow",
+					   "DocksLocked");*/
+	//on_lockUI_toggled(docksLocked);
+	//ui->lockUI->blockSignals(true);
+	//ui->lockUI->setChecked(docksLocked);
+	//ui->lockUI->blockSignals(false);
 
 #ifndef __APPLE__
 	SystemTray(true);
@@ -2463,8 +2472,8 @@ OBSBasic::~OBSBasic()
 			"EditPropertiesMode", editPropertiesMode);
 	config_set_bool(App()->GlobalConfig(), "BasicWindow",
 			"PreviewProgramMode", IsPreviewProgramMode());
-	config_set_bool(App()->GlobalConfig(), "BasicWindow", "DocksLocked",
-			ui->lockUI->isChecked());
+	//config_set_bool(App()->GlobalConfig(), "BasicWindow", "DocksLocked",
+	//		ui->lockUI->isChecked());
 	config_save_safe(App()->GlobalConfig(), "tmp", nullptr);
 
 #ifdef _WIN32
@@ -4666,7 +4675,7 @@ void OBSBasic::CreateSourcePopupMenu(int idx, bool preview)
 		if (IsPreviewProgramMode())
 			action->setEnabled(false);
 
-		popup.addAction(ui->actionLockPreview);
+		//popup.addAction(ui->actionLockPreview);
 		popup.addMenu(ui->scalingMenu);
 
 		previewProjectorSource = new QMenu(QTStr("PreviewProjector"));
@@ -5091,7 +5100,7 @@ static BPtr<char> ReadLogFile(const char *subdir, const char *log)
 
 void OBSBasic::UploadLog(const char *subdir, const char *file, const bool crash)
 {
-	BPtr<char> fileString{ReadLogFile(subdir, file)};
+	/*BPtr<char> fileString{ReadLogFile(subdir, file)};
 
 	if (!fileString)
 		return;
@@ -5123,7 +5132,7 @@ void OBSBasic::UploadLog(const char *subdir, const char *file, const bool crash)
 		connect(thread, &RemoteTextThread::Result, this,
 			&OBSBasic::logUploadFinished);
 	}
-	logUploadThread->start();
+	logUploadThread->start();*/
 }
 
 void OBSBasic::on_actionShowLogs_triggered()
@@ -5184,21 +5193,21 @@ void OBSBasic::on_actionCheckForUpdates_triggered()
 
 void OBSBasic::logUploadFinished(const QString &text, const QString &error)
 {
-	ui->menuLogFiles->setEnabled(true);
-	ui->menuCrashLogs->setEnabled(true);
+	//ui->menuLogFiles->setEnabled(true);
+	//ui->menuCrashLogs->setEnabled(true);
 
-	if (text.isEmpty()) {
-		OBSMessageBox::critical(
-			this, QTStr("LogReturnDialog.ErrorUploadingLog"),
-			error);
-		return;
-	}
-	openLogDialog(text, false);
+	//if (text.isEmpty()) {
+	//	OBSMessageBox::critical(
+	//		this, QTStr("LogReturnDialog.ErrorUploadingLog"),
+	//		error);
+	//	return;
+	//}
+	//openLogDialog(text, false);
 }
 
 void OBSBasic::crashUploadFinished(const QString &text, const QString &error)
 {
-	ui->menuLogFiles->setEnabled(true);
+	/*ui->menuLogFiles->setEnabled(true);
 	ui->menuCrashLogs->setEnabled(true);
 
 	if (text.isEmpty()) {
@@ -5207,7 +5216,7 @@ void OBSBasic::crashUploadFinished(const QString &text, const QString &error)
 			error);
 		return;
 	}
-	openLogDialog(text, true);
+	openLogDialog(text, true);*/
 }
 
 void OBSBasic::openLogDialog(const QString &text, const bool crash)
@@ -5382,7 +5391,7 @@ static inline void ClearProcessPriority()
 
 inline void OBSBasic::OnActivate()
 {
-	if (ui->profileMenu->isEnabled()) {
+	/*if (ui->profileMenu->isEnabled()) {
 		ui->profileMenu->setEnabled(false);
 		ui->autoConfigure->setEnabled(false);
 		App()->IncrementSleepInhibition();
@@ -5392,7 +5401,7 @@ inline void OBSBasic::OnActivate()
 			trayIcon->setIcon(QIcon::fromTheme(
 				"obs-tray-active",
 				QIcon(":/res/images/tray_active.png")));
-	}
+	}*/
 }
 
 extern volatile bool recording_paused;
@@ -5400,7 +5409,7 @@ extern volatile bool replaybuf_active;
 
 inline void OBSBasic::OnDeactivate()
 {
-	if (!outputHandler->Active() && !ui->profileMenu->isEnabled()) {
+	/*if (!outputHandler->Active() && !ui->profileMenu->isEnabled()) {
 		ui->profileMenu->setEnabled(true);
 		ui->autoConfigure->setEnabled(true);
 		App()->DecrementSleepInhibition();
@@ -5415,7 +5424,8 @@ inline void OBSBasic::OnDeactivate()
 		else
 			trayIcon->setIcon(
 				QIcon(":/res/images/tray_active.png"));
-	}
+	}*/
+
 }
 
 void OBSBasic::StopStreaming()
@@ -7168,8 +7178,8 @@ void OBSBasic::on_toggleSourceIcons_toggled(bool visible)
 
 void OBSBasic::on_actionLockPreview_triggered()
 {
-	ui->preview->ToggleLocked();
-	ui->actionLockPreview->setChecked(ui->preview->Locked());
+	/*ui->preview->ToggleLocked();
+	ui->actionLockPreview->setChecked(ui->preview->Locked());*/
 }
 
 void OBSBasic::on_scalingMenu_aboutToShow()
@@ -7785,7 +7795,7 @@ QAction *OBSBasic::AddDockWidget(QDockWidget *dock)
 	assignDockToggle(dock, action);
 	extraDocks.push_back(dock);
 
-	bool lock = ui->lockUI->isChecked();
+	bool lock = false;// ui->lockUI->isChecked();
 	QDockWidget::DockWidgetFeatures features =
 		lock ? QDockWidget::NoDockWidgetFeatures
 		     : (QDockWidget::DockWidgetClosable |
