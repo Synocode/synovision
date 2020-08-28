@@ -1,3 +1,6 @@
+#define NOMINMAX
+#include <Dwmapi.h>
+
 #include <QAction>
 #include <QGuiApplication>
 #include <QMouseEvent>
@@ -46,6 +49,11 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 	isAlwaysOnTop = config_get_bool(GetGlobalConfig(), "BasicWindow",
 					"ProjectorAlwaysOnTop");
 	SetAlwaysOnTop(this, isAlwaysOnTop);
+
+	// make projector invisible to mouse events
+	setAttribute(Qt::WA_TranslucentBackground);
+	setAttribute(Qt::WA_TransparentForMouseEvents);
+	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 
 	setAttribute(Qt::WA_DeleteOnClose, true);
 
@@ -137,6 +145,10 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 
 	// We need it here to allow keyboard input in X11 to listen to Escape
 	activateWindow();
+
+    // make projector invisible to display capture 
+	assert(this->isVisible());
+	SetWindowDisplayAffinity((HWND)this->winId(), WDA_EXCLUDEFROMCAPTURE);
 }
 
 OBSProjector::~OBSProjector()

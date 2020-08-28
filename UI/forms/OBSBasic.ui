@@ -53,149 +53,192 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <layout class="QHBoxLayout" name="previewLayout">
-        <property name="spacing">
-         <number>2</number>
-        </property>
-        <item>
-         <widget class="QWidget" name="previewDisabledWidget" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <item>
-            <spacer name="verticalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Basic.Main.PreviewDisabled</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="enablePreviewButton">
-               <property name="text">
-                <string>Basic.Main.PreviewConextMenu.Enable</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="previewTextLayout">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="previewLabel">
-            <property name="text">
-             <string>StudioMode.Preview</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="OBSBasicPreview" name="preview" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>32</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::ClickFocus</enum>
-            </property>
-            <property name="contextMenuPolicy">
-             <enum>Qt::CustomContextMenu</enum>
-            </property>
-            <addaction name="actionRemoveSource"/>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
+	   <item>
+		   <layout class="QHBoxLayout" name="horizontalLayout_2">
+			   <item>
+				   <layout class="QHBoxLayout" name="previewLayout">
+					   <property name="spacing">
+						   <number>2</number>
+					   </property>
+					   <item>
+						   <widget class="QWidget" name="previewDisabledWidget" native="true">
+							   <property name="sizePolicy">
+								   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+									   <horstretch>0</horstretch>
+									   <verstretch>0</verstretch>
+								   </sizepolicy>
+							   </property>
+							   <layout class="QVBoxLayout" name="verticalLayout_7">
+								   <item>
+									   <spacer name="verticalSpacer_2">
+										   <property name="orientation">
+											   <enum>Qt::Vertical</enum>
+										   </property>
+										   <property name="sizeHint" stdset="0">
+											   <size>
+												   <width>20</width>
+												   <height>40</height>
+											   </size>
+										   </property>
+									   </spacer>
+								   </item>
+								   <item>
+									   <widget class="QLabel" name="label">
+										   <property name="sizePolicy">
+											   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+												   <horstretch>0</horstretch>
+												   <verstretch>0</verstretch>
+											   </sizepolicy>
+										   </property>
+										   <property name="text">
+											   <string>Basic.Main.PreviewDisabled</string>
+										   </property>
+										   <property name="alignment">
+											   <set>Qt::AlignCenter</set>
+										   </property>
+									   </widget>
+								   </item>
+								   <item>
+									   <layout class="QHBoxLayout" name="horizontalLayout">
+										   <item>
+											   <spacer name="horizontalSpacer_2">
+												   <property name="orientation">
+													   <enum>Qt::Horizontal</enum>
+												   </property>
+												   <property name="sizeHint" stdset="0">
+													   <size>
+														   <width>40</width>
+														   <height>20</height>
+													   </size>
+												   </property>
+											   </spacer>
+										   </item>
+										   <item>
+											   <widget class="QPushButton" name="enablePreviewButton">
+												   <property name="text">
+													   <string>Basic.Main.PreviewConextMenu.Enable</string>
+												   </property>
+											   </widget>
+										   </item>
+										   <item>
+											   <spacer name="horizontalSpacer_3">
+												   <property name="orientation">
+													   <enum>Qt::Horizontal</enum>
+												   </property>
+												   <property name="sizeHint" stdset="0">
+													   <size>
+														   <width>40</width>
+														   <height>20</height>
+													   </size>
+												   </property>
+											   </spacer>
+										   </item>
+									   </layout>
+								   </item>
+								   <item>
+									   <spacer name="verticalSpacer_3">
+										   <property name="orientation">
+											   <enum>Qt::Vertical</enum>
+										   </property>
+										   <property name="sizeHint" stdset="0">
+											   <size>
+												   <width>20</width>
+												   <height>40</height>
+											   </size>
+										   </property>
+									   </spacer>
+								   </item>
+							   </layout>
+						   </widget>
+					   </item>
+					   <item>
+						   <layout class="QVBoxLayout" name="previewTextLayout">
+							   <property name="spacing">
+								   <number>0</number>
+							   </property>
+							   <item>
+								   <widget class="QLabel" name="previewLabel">
+									   <property name="text">
+										   <string>StudioMode.Preview</string>
+									   </property>
+									   <property name="alignment">
+										   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+									   </property>
+								   </widget>
+							   </item>
+							   <item>
+								   <widget class="OBSBasicPreview" name="preview" native="true">
+									   <property name="sizePolicy">
+										   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+											   <horstretch>0</horstretch>
+											   <verstretch>0</verstretch>
+										   </sizepolicy>
+									   </property>
+									   <property name="minimumSize">
+										   <size>
+											   <width>32</width>
+											   <height>32</height>
+										   </size>
+									   </property>
+									   <property name="focusPolicy">
+										   <enum>Qt::ClickFocus</enum>
+									   </property>
+									   <property name="contextMenuPolicy">
+										   <enum>Qt::CustomContextMenu</enum>
+									   </property>
+									   <addaction name="actionRemoveSource"/>
+								   </widget>
+							   </item>
+						   </layout>
+					   </item>
+				   </layout>
+			   </item>
+		   </layout>
+	   </item>
+	   <item>
+		   <widget class="QLabel" name="asyncLabel">
+			   <property name="text">
+				   <string>Basic.Filters.AsyncFilters</string>
+			   </property>
+		   </widget>
+	   </item>
    </layout>
+	    <action name="actionRemoveFilter">
+   <property name="icon">
+    <iconset resource="obs.qrc">
+     <normaloff>:/res/images/list_remove.png</normaloff>:/res/images/list_remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionMoveUp">
+   <property name="icon">
+    <iconset resource="obs.qrc">
+     <normaloff>:/res/images/up.png</normaloff>:/res/images/up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Basic.MainMenu.Edit.Order.MoveUp</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
+  </action>
+  <action name="actionMoveDown">
+   <property name="icon">
+    <iconset resource="obs.qrc">
+     <normaloff>:/res/images/down.png</normaloff>:/res/images/down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Basic.MainMenu.Edit.Order.MoveDown</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Down</string>
+   </property>
+  </action>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -206,7 +249,7 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File">
+   <!--<widget class="QMenu" name="menu_File">
     <property name="title">
      <string>Basic.MainMenu.File</string>
     </property>
@@ -220,8 +263,8 @@
     <addaction name="actionAlwaysOnTop"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
-   </widget>
-   <widget class="QMenu" name="menuBasic_MainMenu_Help">
+   </widget>-->
+   <!--<widget class="QMenu" name="menuBasic_MainMenu_Help">
     <property name="title">
      <string>Basic.MainMenu.Help</string>
     </property>
@@ -251,7 +294,7 @@
     <addaction name="actionCheckForUpdates"/>
     <addaction name="actionShowAbout"/>
     <addaction name="separator"/>
-   </widget>
+   </widget>-->
    <widget class="QMenu" name="menuBasic_MainMenu_Edit">
     <property name="title">
      <string>Basic.MainMenu.Edit</string>
@@ -348,7 +391,7 @@
     <addaction name="separator"/>
     <addaction name="actionAdvAudioProperties"/>
    </widget>
-   <widget class="QMenu" name="profileMenu">
+   <!--<widget class="QMenu" name="profileMenu">
     <property name="title">
      <string>Basic.MainMenu.Profile</string>
     </property>
@@ -359,8 +402,8 @@
     <addaction name="actionImportProfile"/>
     <addaction name="actionExportProfile"/>
     <addaction name="separator"/>
-   </widget>
-   <widget class="QMenu" name="sceneCollectionMenu">
+   </widget>-->
+   <!--<widget class="QMenu" name="sceneCollectionMenu">
     <property name="title">
      <string>Basic.MainMenu.SceneCollection</string>
     </property>
@@ -371,7 +414,7 @@
     <addaction name="actionImportSceneCollection"/>
     <addaction name="actionExportSceneCollection"/>
     <addaction name="separator"/>
-   </widget>
+   </widget>-->
    <widget class="QMenu" name="viewMenu">
     <property name="title">
      <string>Basic.MainMenu.View</string>
@@ -413,13 +456,13 @@
     <addaction name="separator"/>
     <addaction name="stats"/>
    </widget>
-   <widget class="QMenu" name="menuTools">
+   <!--<widget class="QMenu" name="menuTools">
     <property name="title">
      <string>Basic.MainMenu.Tools</string>
     </property>
     <addaction name="autoConfigure"/>
     <addaction name="separator"/>
-   </widget>
+   </widget>-->
    <addaction name="menu_File"/>
    <addaction name="menuBasic_MainMenu_Edit"/>
    <addaction name="viewMenu"/>
@@ -1574,11 +1617,11 @@
     <string>Interact</string>
    </property>
   </action>
-  <action name="actionAdvAudioProperties">
+  <!--<action name="actionAdvAudioProperties">
    <property name="text">
     <string>Basic.MainMenu.Edit.AdvAudio</string>
    </property>
-  </action>
+  </action>-->
   <action name="actionWebsite">
    <property name="text">
     <string>Basic.MainMenu.Help.Website</string>
@@ -1673,7 +1716,7 @@
     <string>Basic.MainMenu.View.Toolbars.Listboxes</string>
    </property>
   </action>
-  <action name="toggleStatusBar">
+  <!--<action name="toggleStatusBar">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1683,15 +1726,15 @@
    <property name="text">
     <string>Basic.MainMenu.View.StatusBar</string>
    </property>
-  </action>
-  <action name="actionLockPreview">
+  </action>-->
+  <!--<action name="actionLockPreview">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="text">
     <string>Basic.MainMenu.Edit.LockPreview</string>
    </property>
-  </action>
+  </action>-->
   <action name="actionScaleWindow">
    <property name="checkable">
     <bool>true</bool>
@@ -1721,7 +1764,7 @@
     <string>PasteDuplicate</string>
    </property>
   </action>
-  <action name="autoConfigure2">
+  <!--<action name="autoConfigure2">
    <property name="text">
     <string>Basic.AutoConfig</string>
    </property>
@@ -1751,7 +1794,7 @@
    <property name="text">
     <string>Basic.MainMenu.View.Docks.LockUI</string>
    </property>
-  </action>
+  </action>-->
   <action name="toggleScenes">
    <property name="checkable">
     <bool>true</bool>
@@ -1774,7 +1817,7 @@
     <string>Basic.Main.Sources</string>
    </property>
   </action>
-  <action name="toggleMixer">
+  <!--<action name="toggleMixer">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1784,8 +1827,8 @@
    <property name="text">
     <string>Mixer</string>
    </property>
-  </action>
-  <action name="toggleTransitions">
+  </action>-->
+  <!--<action name="toggleTransitions">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1795,8 +1838,8 @@
    <property name="text">
     <string>Basic.SceneTransitions</string>
    </property>
-  </action>
-  <action name="toggleControls">
+  </action>-->
+  <!--<action name="toggleControls">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1821,13 +1864,13 @@
    <property name="text">
     <string>Basic.MainMenu.Help.CrashLogs.UploadLastLog</string>
    </property>
-  </action>
+  </action>-->
   <action name="actionDiscord">
    <property name="text">
     <string>Basic.MainMenu.Help.Discord</string>
    </property>
   </action>
-  <action name="toggleStats">
+  <!--<action name="toggleStats">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1837,7 +1880,7 @@
    <property name="text">
     <string>Basic.Stats</string>
    </property>
-  </action>
+  </action>-->
   <action name="actionShowAbout">
    <property name="text">
     <string>Basic.MainMenu.Help.About</string>
@@ -1900,6 +1943,11 @@
    <extends>QPushButton</extends>
    <header>record-button.hpp</header>
   </customwidget>
+	 <customwidget>
+		 <class>FocusList</class>
+		 <extends>QListWidget</extends>
+		 <header>focus-list.hpp</header>
+	 </customwidget>
  </customwidgets>
  <resources>
   <include location="obs.qrc"/>

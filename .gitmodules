@@ -16,3 +16,6 @@
 [submodule "plugins/obs-outputs/ftl-sdk"]
 	path = plugins/obs-outputs/ftl-sdk
 	url = https://github.com/Mixer/ftl-sdk.git
+[submodule "plugins/obs-shaderfilter"]
+	path = plugins/obs-shaderfilter
+	url = https://github.com/Synocode/obs-shaderfilter-1.git

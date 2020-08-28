@@ -1,5 +1,33 @@
-OBS Studio <https://obsproject.com>
+S Y N O V I S I O N
 ===================================
+
+Synovision is a fork of OBS Studio (<https://github.com/obsproject/obs-studio>)
+for Windows 10. Synovision allows the user to apply a full screen shader to
+their display. The goal of Synovision is to enable Windows 10 (potentially other OS)
+users the ability to fully customize the visual attributes of their desktop
+experience.
+
+User Guide
+----------
+1. Add a display source to the default scene.
+2. Right click the source and click "Filters."
+3. Add as many filters as you want -- make sure the preview is still visible
+4. Right click the preview window and click "Fullscreen Projector."
+5. To close the projector, click the projector icon in the taskbar or use
+    "Alt-tab" to make it the foremost window and press "Esc."
+
+Shaders
+-------
+The existing user-defined shaders are imported from OBS Shaderfilter
+(https://github.com/Oncorporation/obs-shaderfilter)
+You can access them by navigating to:
+    obs-studio/plugins/obs-shaderfilter/data/examples
+Currently there is no CRT TV shader, but if you're interested in contributing,
+please push to the Oncorporation/obs-shaderfilter repo.
+
+
+OBS Studio <https://obsproject.com>
+-------------------
 
 .. image:: https://dev.azure.com/obsjim/obsjim/_apis/build/status/obsproject.obs-studio?branchName=master
    :alt: OBS Studio Build Status - Azure Pipelines

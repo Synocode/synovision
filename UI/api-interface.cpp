@@ -183,7 +183,7 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 	void obs_frontend_set_current_scene_collection(
 		const char *collection) override
 	{
-		QList<QAction *> menuActions =
+		/*QList<QAction *> menuActions =
 			main->ui->sceneCollectionMenu->actions();
 		QString qstrCollection = QT_UTF8(collection);
 
@@ -197,17 +197,17 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 					break;
 				}
 			}
-		}
+		}*/
 	}
 
 	bool obs_frontend_add_scene_collection(const char *name) override
 	{
 		bool success = false;
-		QMetaObject::invokeMethod(main, "AddSceneCollection",
+		/*QMetaObject::invokeMethod(main, "AddSceneCollection",
 					  WaitConnection(),
 					  Q_RETURN_ARG(bool, success),
 					  Q_ARG(bool, true),
-					  Q_ARG(QString, QT_UTF8(name)));
+					  Q_ARG(QString, QT_UTF8(name)));*/
 		return success;
 	}
 
@@ -231,7 +231,7 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 
 	void obs_frontend_set_current_profile(const char *profile) override
 	{
-		QList<QAction *> menuActions = main->ui->profileMenu->actions();
+	/*	QList<QAction *> menuActions = main->ui->profileMenu->actions();
 		QString qstrProfile = QT_UTF8(profile);
 
 		for (int i = 0; i < menuActions.count(); i++) {
@@ -244,7 +244,7 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 					break;
 				}
 			}
-		}
+		}*/
 	}
 
 	void obs_frontend_streaming_start(void) override
@@ -310,22 +310,23 @@ struct OBSStudioAPI : obs_frontend_callbacks {
 
 	void *obs_frontend_add_tools_menu_qaction(const char *name) override
 	{
-		main->ui->menuTools->setEnabled(true);
-		return (void *)main->ui->menuTools->addAction(QT_UTF8(name));
+	/*	main->ui->menuTools->setEnabled(true);
+		return (void *)main->ui->menuTools->addAction(QT_UTF8(name));*/
+		return nullptr;
 	}
 
 	void obs_frontend_add_tools_menu_item(const char *name,
 					      obs_frontend_cb callback,
 					      void *private_data) override
 	{
-		main->ui->menuTools->setEnabled(true);
+		/*main->ui->menuTools->setEnabled(true);
 
 		auto func = [private_data, callback]() {
 			callback(private_data);
 		};
 
 		QAction *action = main->ui->menuTools->addAction(QT_UTF8(name));
-		QObject::connect(action, &QAction::triggered, func);
+		QObject::connect(action, &QAction::triggered, func);*/
 	}
 
 	void *obs_frontend_add_dock(void *dock) override

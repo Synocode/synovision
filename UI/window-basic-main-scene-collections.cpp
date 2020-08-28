@@ -209,56 +209,56 @@ bool OBSBasic::AddSceneCollection(bool create_new, const QString &qname)
 
 void OBSBasic::RefreshSceneCollections()
 {
-	QList<QAction *> menuActions = ui->sceneCollectionMenu->actions();
-	int count = 0;
+	//QList<QAction *> menuActions = ui->sceneCollectionMenu->actions();
+	//int count = 0;
 
-	for (int i = 0; i < menuActions.count(); i++) {
-		QVariant v = menuActions[i]->property("file_name");
-		if (v.typeName() != nullptr)
-			delete menuActions[i];
-	}
+	//for (int i = 0; i < menuActions.count(); i++) {
+	//	QVariant v = menuActions[i]->property("file_name");
+	//	if (v.typeName() != nullptr)
+	//		delete menuActions[i];
+	//}
 
-	const char *cur_name = config_get_string(App()->GlobalConfig(), "Basic",
-						 "SceneCollection");
+	//const char *cur_name = config_get_string(App()->GlobalConfig(), "Basic",
+	//					 "SceneCollection");
 
-	auto addCollection = [&](const char *name, const char *path) {
-		std::string file = strrchr(path, '/') + 1;
-		file.erase(file.size() - 5, 5);
+	//auto addCollection = [&](const char *name, const char *path) {
+	//	std::string file = strrchr(path, '/') + 1;
+	//	file.erase(file.size() - 5, 5);
 
-		QAction *action = new QAction(QT_UTF8(name), this);
-		action->setProperty("file_name", QT_UTF8(path));
-		connect(action, &QAction::triggered, this,
-			&OBSBasic::ChangeSceneCollection);
-		action->setCheckable(true);
+	//	QAction *action = new QAction(QT_UTF8(name), this);
+	//	action->setProperty("file_name", QT_UTF8(path));
+	//	connect(action, &QAction::triggered, this,
+	//		&OBSBasic::ChangeSceneCollection);
+	//	action->setCheckable(true);
 
-		action->setChecked(strcmp(name, cur_name) == 0);
+	//	action->setChecked(strcmp(name, cur_name) == 0);
 
-		ui->sceneCollectionMenu->addAction(action);
-		count++;
-		return true;
-	};
+	//	ui->sceneCollectionMenu->addAction(action);
+	//	count++;
+	//	return true;
+	//};
 
-	EnumSceneCollections(addCollection);
+	//EnumSceneCollections(addCollection);
 
-	/* force saving of first scene collection on first run, otherwise
-	 * no scene collections will show up */
-	if (!count) {
-		long prevDisableVal = disableSaving;
+	///* force saving of first scene collection on first run, otherwise
+	// * no scene collections will show up */
+	//if (!count) {
+	//	long prevDisableVal = disableSaving;
 
-		disableSaving = 0;
-		SaveProjectNow();
-		disableSaving = prevDisableVal;
+	//	disableSaving = 0;
+	//	SaveProjectNow();
+	//	disableSaving = prevDisableVal;
 
-		EnumSceneCollections(addCollection);
-	}
+	//	EnumSceneCollections(addCollection);
+	//}
 
-	ui->actionRemoveSceneCollection->setEnabled(count > 1);
+	//ui->actionRemoveSceneCollection->setEnabled(count > 1);
 
-	OBSBasic *main = reinterpret_cast<OBSBasic *>(App()->GetMainWindow());
+	//OBSBasic *main = reinterpret_cast<OBSBasic *>(App()->GetMainWindow());
 
-	main->ui->actionPasteFilters->setEnabled(false);
-	main->ui->actionPasteRef->setEnabled(false);
-	main->ui->actionPasteDup->setEnabled(false);
+	//main->ui->actionPasteFilters->setEnabled(false);
+	//main->ui->actionPasteRef->setEnabled(false);
+	//main->ui->actionPasteDup->setEnabled(false);
 }
 
 void OBSBasic::on_actionNewSceneCollection_triggered()
